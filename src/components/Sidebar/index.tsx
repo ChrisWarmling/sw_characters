@@ -1,11 +1,11 @@
-
+import { Aside } from "./styles";
 
 export function Sidebar() {
   return (
-    <aside>
+    <Aside>
       <header>
         <img src="/images/logo.svg" alt="" />
       </header>
-    </aside>
+    </Aside>
   )
 }
