@@ -12,13 +12,14 @@ const GlobalStyle = createGlobalStyle`
   --black: #000000;
 
   --gray-100: #e1e1e6;
-  --gray-300: #a8a8b3;
-  --gray-700: #323238;
-  --gray-800: #29292e;
-  --gray-850: #1f2729;
-  --gray-900: #121214;
+  --gray-300: #B5B7B7;
+  --gray-800: #1D1E1F;
+  --gray-900: #0A0B0B;
 
   --yellow: #ffe81f;
+  --blue-light: #12FAFF;
+
+  --shadow-light: 1px 1px 8px rgba(18, 250, 255, 0.7);
 }
 
 @media(max-width: 1080px) {
@@ -39,7 +40,7 @@ body{
 }
 
 body, input, select, textarea, button{
-  font: 400 1rem "Roboto", sans-serif;
+  font: 500 1rem "Gothic A1", sans-serif;
 }
 
 button{
@@ -49,6 +50,23 @@ button{
 a{
   color: inherit;
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #B5B7B7; 
+  border-radius: .25rem;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #0A0B0B; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000; 
 }
 `;
 
