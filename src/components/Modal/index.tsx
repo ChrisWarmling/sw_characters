@@ -18,8 +18,10 @@ const styleModal: Styles = {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#1d1e1f',
     border: 'none',
-    width: '20rem',
-    height: '30rem'
+    width: 'fit-content',
+    height: 'fit-content',
+    padding: '0',
+    margin: '0'
   }
 }
 

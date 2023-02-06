@@ -12,11 +12,17 @@ export const StyledCardInformation = styled.article`
   background-color: var(--gray-800);
   border-radius: .5rem;
 
-  h1 {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1 {
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 2rem;
-    font-family: 'Star Wars';
+    /* font-family: 'Star Wars'; */
+  }
   }
 `
 
@@ -35,8 +41,8 @@ export const Section = styled.section`
     section {
       overflow: auto;
       display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+      flex-direction: column;
+      gap: 1.5rem;
     }
   }
 `

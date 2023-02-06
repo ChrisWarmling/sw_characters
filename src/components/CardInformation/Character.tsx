@@ -1,32 +1,38 @@
 import { CardInformation } from ".";
+import { useCharacters } from "../../hooks/useCharcter";
+import { Erro } from "../Erro";
 import { Information } from "../Information";
 import { Section } from "./style";
 
 export function Character() {
+  const { character, filmsCharacter, openModal } = useCharacters()
   return (
-    <CardInformation title="Darth Vader">
+    <CardInformation title={character?.name ?? ''} nameButton="Change character" onClickButton={openModal}>
       <Section>
-        <div>
-          <Information info="Gender" value="Male" />
-          <Information info="Birth year" value="41.9BBY" />
-          <Information info="Eye color" value="Yellow" />
-          <Information info="Height" value="202" />
-          <Information info="Mass" value="136" />
-        </div>
-        <div>
-          <Information info="Films" />
-          <section>
-            <strong>Episode IV - A new Hope</strong>
-            <strong>Episode V - The Empire Strikes Back</strong>
-            <strong>Episode VI - Return of the Jedi</strong>
-            <strong>Episode IV - A new Hope</strong>
-            <strong>Episode V - The Empire Strikes Back</strong>
-            <strong>Episode VI - Return of the Jedi</strong>
-            <strong>Episode IV - A new Hope</strong>
-            <strong>Episode V - The Empire Strikes Back</strong>
-            <strong>Episode VI - Return of the Jedi</strong>
-          </section>
-        </div>
+        {
+          character ?
+            <>
+              <div>
+                <Information info="Gender" value={character?.gender} />
+                <Information info="Birth year" value={character?.birth_year} />
+                <Information info="Eye color" value={character?.eye_color} />
+                <Information info="Height" value={character?.height} />
+                <Information info="Mass" value={character?.mass} />
+              </div>
+              <div>
+                <Information info="Films" />
+                <section>
+                  {
+                    filmsCharacter?.map(({title}) => (
+                      <strong>{title}</strong>
+                    ))
+                  }
+                </section>
+              </div>
+            </>
+            :
+            <Erro />
+        }
       </Section>
     </CardInformation>
   )

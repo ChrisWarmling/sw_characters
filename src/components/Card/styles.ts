@@ -15,4 +15,6 @@ export const StyledCard = styled.article<StyledCardProps>`
 
   background-color: var(--gray-800);
   border-radius: .5rem;
+
+  cursor: pointer;
 `

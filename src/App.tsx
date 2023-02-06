@@ -5,21 +5,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CardsHome } from './components/CardsHome';
 import { Character } from './components/CardInformation/Character';
 import { SearchModal } from './components/Modal/SearchModal';
+import { CharactersProvider } from './context/CharactersContext';
 
 function App() {
   return (
-    <>
-      <Header />
-      <CardContainer>
-        <BrowserRouter>
+    <BrowserRouter>
+      <CharactersProvider>
+        <Header />
+        <CardContainer>
           <Routes>
             <Route path='/' element={<CardsHome />} />
             <Route path='/character' element={<Character />} />
           </Routes>
-        </BrowserRouter>
-      </CardContainer>
-      <SearchModal />
-    </>
+        </CardContainer>
+        <SearchModal />
+      </CharactersProvider>
+    </BrowserRouter>
   );
 }
 
