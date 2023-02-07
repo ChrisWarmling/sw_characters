@@ -35,6 +35,12 @@ const GlobalStyle = createGlobalStyle`
   }
 }
 
+@media(max-width: 380px) {
+  html{
+    font-size: 75%;
+  }
+}
+
 body{
   background: var(--gray-900);
   color: var(--white);

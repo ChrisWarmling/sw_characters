@@ -15,8 +15,13 @@ export const StyledHeader = styled.header`
 
     padding: .75rem;
 
-    img {
-      height: 100%;
+    div {
+      display: flex;
+      width: 100%;
+
+      &.left {
+        justify-content: flex-end;
+      }
     }
 `
 

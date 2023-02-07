@@ -17,6 +17,7 @@ interface CharacterContextProps {
   filmsCharacter: IFilms[] | undefined;
   isOpenModal: boolean;
   isLoading: boolean;
+  isLoadingFilms: boolean;
   thereIsMore: boolean;
   isLoadingMore: boolean;
   searchValue: string;
@@ -42,6 +43,7 @@ export function CharactersProvider({ children }: CharactersProviderProps) {
   const [filmsCharacter, setFilmsCharacter] = useState<IFilms[]>()
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoadingFilms, setIsLoadingFilms] = useState<boolean>(false)
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false)
   const [nextPage, setNextPage] = useState<string>()
   const [thereIsMore, setThereIsMore] = useState<boolean>(false)
@@ -96,6 +98,7 @@ export function CharactersProvider({ children }: CharactersProviderProps) {
   }
 
   async function handleSetFilms(filmsUrl: string[]){
+    setIsLoadingFilms(true)
     const films = await Promise.all(filmsUrl.map( async (url) => {
       return await listFilms(url).then(response => response)
     }))
@@ -104,6 +107,7 @@ export function CharactersProvider({ children }: CharactersProviderProps) {
 
     //@ts-ignore
     setFilmsCharacter(filmsFiltered)
+    setIsLoadingFilms(false)
   }
 
   async function listFilms(url: string) {
@@ -150,6 +154,7 @@ export function CharactersProvider({ children }: CharactersProviderProps) {
         filmsCharacter,
         isOpenModal,
         isLoading,
+        isLoadingFilms,
         thereIsMore,
         isLoadingMore,
         searchValue,

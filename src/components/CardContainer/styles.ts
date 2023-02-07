@@ -9,4 +9,10 @@ export const StyledContainer = styled.section`
 
   width: 100vw;
   height: calc(100vh - 5rem);
+
+  @media screen and (max-width: 430px) {
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 2rem;
+  }
 `
