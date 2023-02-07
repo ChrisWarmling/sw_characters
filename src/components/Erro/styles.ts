@@ -6,6 +6,7 @@ export const ErrorMessage = styled.section`
   height: 100%;
   width: 100%;
 
+  
   img {
     height: 20rem;
   };
@@ -18,6 +19,17 @@ export const ErrorMessage = styled.section`
     margin-top: 5rem;
     h1 {
       font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    flex-direction: column-reverse;
+    img {
+      height: 15rem;
+    }
+
+    aside {
+      margin: 1rem 0;
     }
   }
 `
